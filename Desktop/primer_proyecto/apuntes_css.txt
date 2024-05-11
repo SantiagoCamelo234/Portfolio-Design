@@ -1,0 +1,267 @@
+### CSS ###
+
+- Agrega diseño a nuestro html
+- Hojas de estilo en cascada
+Se encarga de:
+    Tamaños y tipos de fuente
+    Colores
+    Espacios
+    Margenes
+    Adaptar diseños a distintos dispositivos
+    Animaciones etc
+
+### ANATOMIA DE CSS ###
+
+p -> selector
+{} -> delimita el css que se le aplicara al selector
+color: -> propiedad del selector que se puede modificar
+blue; -> valor que se le asigna a la propiedad
+- Se le denomina en cascada ya que si se tiene dos colores para el mismo selector CSS aplica el ultimo
+- SIEMPRE APLICA LA ULTIMA PROPIEDAD
+
+### CREAR UN FICHERO DE CSS ###
+
+- Sirve para aplicar el mismo codigo en varias paginas
+- se tiene que enlazar en el HTML"
+- Esto se hace con la etiqueta LINK y con el atributo HREF donde se pone la ruta del fichero de CSS esto se pone en el HEAD
+- Tambien se le agrega el atributo de REL en el cual se pone que relacion tiene con el documento en esta caso se pone STYLESHEET
+- Se usa el atributo PRELOAD para que el fichero de css cargue mas rapido(IMPORTANTE)
+- La etiqueta SPAN sirve para agregar una etiqueta que NO HACE NADA
+
+### PROPIEDADES DE CSS ###
+
+- text-align = sirve para alinear el texto
+- font-size = sirve para cambiar el tamaño del texto
+    unidades de medida:
+        px --> menos usada
+        rem --> Es relativo al documento
+        em --> se aplica el doble del valor del elemento padre
+los rems se adaptan mejor a diferentes pantallas
+
+### TIPOS DE SELECTORES ###
+
+- h1 span -> el codigo se aplica solo al span del h1
+- span -> el codigo se aplica a todos los span
+SE RECOMIENDAN MAS LAS CLASES QUE LOS SELECTORES DE ID
+
+###  SELECTORES EN CSS ###
+
+PARA DEFINIR UNA CLASE EN HTML SE USA EL ATRIBUTO CLASS
+La etiqueta llamada style sirve para poner css dentro del mismo fichero de nuestro hmtl(se pone en el head)
+- Se puede seleccionar uno o varios
+- Selector de elemento -> seleccionara un elemento en base a su etiqueta(se aplica a todos los elementos que contengan esta etiqueta)
+- Selector de clase -> Una clase se puede crear multiples veces (es reutilizable ) e inicia con un punto
+- Selector de ID -> Se pueden tener multiples ID'S por pagina pero sus nombres no pueden repetirse inicia con un numeral
+- Selector de Atributo -> se selecciona el atributo de html y se aplica css
+  
+- COMBINACION DE DESCENDENTES -> Selecciona elementos hijos cuyo padre sea una clase (o ID) en especifico
+- TODOS LOS HIJOS -> Aplica el codigo a todos los hijos de una clase
+
+### ESPECIFICIDAD EN CSS ###
+
+¿QUE VALORES EN CSS SERAN TOMADOS EN CUENTA POR EL NAVEGADOR?
+- ESPECIFICIDAD -> Es como el navegador va a mostrar el CSS de acuerdo a que tan especifico es el selector que hemos creado
+- LO MAS IMPORTANTE ES SU ESPECIFICIDAD
+- Siempre se aplica la ultima regla para el mismo selector siempre y cuando tengan la misma especificidad
+- Entre mas especifico sea un selector mas probable sera que este se aplique
+- !important -> Es la especificidad mas importante
+- NO IMPORTA DONDE SE DECLARE EL CODIGO, CSS DECIDIRA POR SU ESPECIFICIDAD
+
+### COLORES EN CSS ###
+
+- Se pueden utilizar los colores de muchas formas
+- POR NOMBRE -> color:blue; (no recomendado)
+- HEXADECIMAL -> #000; o #000000
+- RGB O HSL 
+- RGBA Y HSLA -> Transparencia
+- Un uso de las costume properties es por si se cambia algo solo se cambia el valor de la propiedada de esta y no todo el codigo
+Los elementos que inician con : se conocen como pseudoselectores, es decir no estan en el html
+
+### AÑADIR FUENTES EXTERNAS ###
+
+- Google fonts, se copia el link y se pone en el head del html
+- se debe poner primero que la hoja de estilos
+- luego se debe usar la fuente en css
+- se puede poner el font-family en el body en css para que se aplique a todo el html
+
+### NORMALIZE.CSS ###
+
+- Hace que todos los elementos se vean igual en diferentes navegadores
+- se descarga en normalize.css, se copia el codigo ctrl + acuerdo y se crea un nuevo fichero que es donde se pone
+- cuando se añade una libreria en css se debe colocar en su propio archivo
+- siempre debe ser la libreria que cargue primero
+
+### ESTILOS A LA NAVEGACION ###
+
+- Con espacio se puede agregar mas de una clase a un mismo atributo
+- Los margenes nos sirve para establecer en que pocision se va a establecer un elemento estos se dividen en 4:
+    - margin-top =  margen de arriba
+    - margin-right = margen a la derecha
+    - margin-left = margen a la izquierda
+    - margin-bottom = margen de abajo
+- Agregan separacion
+- el auto aplica una pocision automatica al aplicarlo en ambos lados queda centrada
+- tambien se puede escribir de la siguiente forma 
+    margin: margin-top margin-right margin-bottom margin-left
+    margin: 0 auto 0 auto;
+- cuando los valores se repiten se pueden eliminar uno de ellos
+    margin: 0 auto;
+- cuando solo hay dos valores css entiende que el primero es de arriba y el de abajo y el segundo es el de la izquierda y la derecha
+
+### DISPLAYS ###
+
+- Algunos elementos se muestran de una forma mientras que otros se muestran de otra forma
+- Todos los elementos en el HTML ya tienen un display por default
+- DISPLAY BLOCK = Significa que el elemento se colocara uno debajo del otro sin importar su tamaño o contenido -> parrafo
+- DISPLAY INLINE = Significa que el elemento se pocisionara a la derecha una vez que haya tomado el espacio que requiere -> navegador
+- Ningun elemento tiene un display flex o un gri por default
+- No hay que especificar un display para cada elemento
+
+### ESTILOS DE NAVEGACION Y TIPOS DE EFECTOS DE TEXTO ###
+
+- MARGIN = Separacion del limite del elemento hacia afuera con el elemento mas cercano
+- PADDING = Hace mas grande el elemento desde donde termina hacia dentro
+- Tener un solo valor en el padding es como tener cuatro valores 
+- Las propiedades de font y text modifican la fuente 
+- text-decoration = sirve para quitar el el decorado del texto
+
+### FLEXBOX ###
+
+- Fue diseñado como un modelo unidimensional para crear diseños
+- Tiene dos ejes filas (row) o columna (column) row es aplicado por default
+- Row: Los elementos hijos se colocan de izquierda derecha
+- Column: Se ponen de arriba hacia abajo
+- Sirve para alinear elementos
+- Siempre se debe ir al elemento padre de lo que se desea alinear
+- justify-content: pone el contendo horizontalmente
+- space-between: pone el contenido en las esquinas 
+- space-around: genera un espacio al inicio de cada elemento
+- align-items: es el justify contents de las columnas
+
+### DIFERENTES ENFOQUES PARA ESCRIBIR CSS ###
+
+BEM -> BLOQUES, ELEMENTOS Y MODIFICADORES
+EJEMPLO:
+    .card{} *BLOQUE*
+    .card__titulo{} *ELEMENTO*
+    .card__imagen{} *ELEMENTO*
+    .card__boton{} *ELEMENTO*
+    .card__boton--activo{} *MODIFICADOR* 
+
+UTILITY FIRST -> Se crean clases de una sola propiedad que describe lo que hace
+EJEMPLO: *Una clase por cada accion que se realice en el CSS*
+    .text-center {}
+    .color-red-100 {}
+    .bg-blue-200 {}
+    .p-2 {}
+    .m-2 {} 
+MODULOS -> Define primero el elemento principal y luego los subelementos del mismo
+EJEMPLO:
+    .card {}
+    .card h2 {}
+    .card img {}
+- Se pueden utilizar mas de uno en un mismo proyecto
+
+### EVENTOS DE CSS ###
+
+- Cosas que suceden en la interaccion con el usuario
+- Tambien conocidas como pseudoclases
+- Ejemplos de pseudoclases:
+- hover: cuando posas encima de el elemento
+- visited: cuando ya hayas vistado el elemento
+- focus: colocarse en el elemento
+
+### RESPONSIVE WEB DESIGN ###
+
+- Sirve para que el sitio web se adapte a diferentes dipositivos y resoluciones
+- Esto se logra mediante media queries
+- los media queries solo se escribe lo que se va a modificar en la pantalla el resto no(no es necesario reescribir todo)
+- poner media queries cada vez que sea necesario reescribir una propiedad
+
+### CREACION DE SNIPPETS ###
+- Atajo para no tener que escribir todo el codigo
+- ctrl + shift + p
+-snippets
+- css.json
+
+### MEDIA QUERIES ###
+
+- Media queries estandar:
+- Telefono = 480px
+- Tablet = 768px
+- Computador = 1140px
+- responsively = app que carga la pagina en diferentes tamaños (permite crear nuevos dispositivos)
+
+### IMAGENES CON CSS ###
+
+- background-image = pone una imagen como fondo
+- se utiliza url y se pone la ruta de la imagen a utilizar
+- para que no se repita la imagen en el fondo se pone = background-repeat: no-repeat;
+- background-size: cover; = la imagen tomara todo el ancho disponible
+
+### BOX MODEL ###
+
+- Todo en css es una caja, pero esta depende de 4 cosas
+- 1. Tamano de contenido
+- 2. Tamaño de relleno (padding)
+- 3. Tamaño dse borde
+- 4. Margen
+- :after -> contenido que no existe como tal, pero forma parte de un pseudoelemento que va despues de un elemento en especifico
+- :before -> contenido que no existe como tal, pero forma parte de un pseudoelemento que va antes de un elemento en especifico
+- no existen en el html pero si en el css
+
+### POSITION ABSOLUTE ###
+
+- Existe la pocision absoluta y relativa cuando se quiere establecer un elemento de manera precisa
+- El padre siempre debe tener pocision relativa, para que el hijo se pueda pocisionar de forma absoluta
+- para colocar un objeto exactamente donde queremos usamos las coordenadas
+EJEMPLO:
+    top: 0; (pocision 0 arriba)
+    right: 0; (pocision 0 a la derecha)
+- Se usa rgba para poner transparencia el cual es el cuarto valor que se debe establecer entre 0 y 1
+
+### BOTONES EN CSS ###
+
+- Uno de los elementos que mas llevan codigo css
+- border-radius -> redondea los bordes del boton
+
+### COMENTAR CODIGO CSS ###
+
+- Sirve para comentar codigo que es innesesario en el momento
+- Sirve para saber que etiqueta cierra que en caso de que estas tengan mucho contenido 
+- Sirve para decir que es lo que se hace o para recordar lo que hicimos
+
+### DEGRADADOS CON CSS ###
+
+- El color de fondo siempre va en el body
+- Para acceder a los degradados en CSS se debe acceder como background-image y luego ponemos linear-gradient()
+- Dentro del parentesis se establece hasta donde va ir el degradado, el primer color y en que parte inicia, hacia que color va ir y hasta donde va ir
+
+### SOMBRAS CON CSS ###
+
+- cssmatic -> Sirve para crear degradados y sombras para css de una forma automatica
+- dentro de esta web se utiliza box shadow para determinar la sombra y se copia el codigo
+- se puede verificar el soporte de la propiedad de css en caniuse.com
+
+### CSS GRID ###
+
+- Permite definir la ubicacion y tamaño de los elementos de tu sitio web
+- A diferencia de flexbox donde el contenido se agrupa de forma automatica, css grid se agrupa dentro de un area definida
+- Hay acceso a las dos dimensiones
+- Tanto flexbox como css grid se pueden utilizar en un mismo diseño
+- Funciona mejor con firefox ya que se puede ver el plano cartesion de css grid
+- grid-template-columns = establece las columnas que se quieren definir
+EJEMPLO:
+      display: grid; /*Agrega las propiedades de css grid*/
+    grid-template-columns: 300px 300px; /*Definimos dos columnas*/
+    grid-template-rows: 200px 800px; /*Definimos filas con diferente tamaño*/
+    /*Forma corta*/
+    grid: 200px 800px /300px 300px; /*rows/columns*/
+
+### CUANDO USAR CSS GRID, FLEXBOX, FLOATS ###
+
+FLEXBOX -> Se usa para la alineacion o distribucion de los elementos que estaran dentro de contenedores 
+GRID -> Se usa para definir el layout de un sitio web, como pueden ser las columnas o contenedores de elementos
+Nunca usar floats
+
+

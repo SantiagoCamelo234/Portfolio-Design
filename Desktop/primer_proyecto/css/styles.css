@@ -1,0 +1,277 @@
+/**Definir paleta de colores**/
+:root{ /**Custome properties**/
+    /**Custom colors**/
+    --blanco: #FFFFFF;
+    --negro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+
+    /**Custom fontsize**/
+    --fuente-principal: 3.8rem;
+
+
+}
+
+html{
+    font-size: 62.5%;/*Hack boxmodel*/
+    box-sizing: border-box; /**Con esto el padding no afecta el tamaño del elemento**/
+    scroll-snap-type: y mandatory ; /*Sirve para que haga scroll arriba hacia abajo por el eje Y*/
+    /*Mandatory te lleva al otro punto sin tanto esfuerzo*/
+    /* Proximity requiere de mas esfuerzo o te devuelve al punto en el que estas*/
+}
+
+/** El asterisco selecciona todos los elementos del html**/
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px; /**1 rem = 10px**/
+    font-family: "Krub", sans-serif;
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 100%); /* El porcentaje indica a que altura del degradado se debe llegar a ese color*/
+}
+/**Lo que hace el codigo anterior es que un rem equivalga a 10px**/
+/** Se establecen tamaños principales para los h**/
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+/** Aplica para todos los h **/
+h1, h2, h3 {
+    text-align: center;
+}
+
+.titulo { /**Aplicacion de selector de clase**/
+    text-align: center;
+    font-size: var(--fuente-principal); /**Utilizacion de custom fontsize**/
+    color: var(blanco); /**Utilizacion de costume colors**/
+    
+}
+
+#titulo span { /**Busca el span que este dentro de la clase titulo**/
+    font-size: 2rem;
+}
+.contenedor{
+    max-width: 120rem; /** Toma 1200px como maximo **/
+    margin: 0 auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 480px) {
+   .boton{
+    width: auto;
+   }
+}
+.boton:hover {
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.54); /*Funciona sin prefijo pero depende de la propiedad*/
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+/*Utilidades*/
+.w-100{
+    width: 100%;
+}
+@media (min-width: 768px) {
+   .w-100{
+    width: auto;
+   }
+}
+.flex {
+    display: flex;
+}
+.alinear-derecha{
+justify-content: flex-end;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+
+}
+.navegacion-principal {
+    background-color: var(--secundario);
+    padding: 1rem;
+    display: flex;/** Habilitamos flexbox en el elemento padre**/
+    flex-direction: column;
+    justify-content: space-between; /** pone espacio entre los elementos de la brra de navegacion**/
+}
+
+/**Aplicacion de responsive web design**/
+@media (min-width: 768px) {
+   .navegacion-principal{
+    /** Se hereda toda la clase**/
+    flex-direction: row;
+    justify-content: space-between; /** align-items -> Justify content de las columns **/
+   }
+}
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+/**Creacion de pseudoclase hover**/
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--negro);
+}
+
+.hero {
+    background-image: url(/img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0,0,0, .5); /**Anterior**/
+    background-color: rgb(0 0 0 /70%); /** Nueva: se pone el porcentaje de intesidad despues de la diagonal **/
+    /** Tomar todo el espacio del elemento **/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /** Horizontalmente  CUANDO ES COLUMN**/
+    justify-content: center; /** Verticalmente  CUANDO ES COLUMN**/
+}
+
+.contenido-hero h2, .contenido-hero p {
+    color: var(--blanco);
+
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end; /**Alineacion vertical**/
+}
+
+.servicios, .navegacion-principal, .formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always; /*Hace que si o si se detenga en esta parte de la pagina*/
+}
+/* Servicios */
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Repite 3 veces 1fr*/
+        column-gap: 1rem; /*Añade espacio entre las columnas*/
+    }
+}
+.servicio{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3 {
+    color: var(--secundario)
+}
+.servicio p {
+    line-height: 2; /*Cambia el interlineado del texto*/
+    text-align: center;
+}
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%; /*Se pone borde redondo para que se convierta en un circulo*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+    
+/*Contacto*/
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%); /*Utiliza el valor mas pequeñó (Utiliza 60 rem mientras el 100% no sea menor a 60rem)*/
+    margin: 0 auto; /*Se utiliza para centrar un elemento cuyo padre no es un display-flex*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    color: var(--primario);
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+        }
+    .campo:nth-child(3), .campo:nth-child(4){ /*Selecciona el primer hijo de esa clase */
+        grid-column: 1/3; /*Se le dice al elemento que vaya de la columna uno hasta la 3*/
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+/* .campo input[type = "text"], .campo input[type = "tel"]{ /* Selecciona el input cuyo tipo sea text o tel*/
+
+.campo textarea {
+    height: 20rem;
+}
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.enviar .boton {
+    width: 100%;
+}
+
+/*Diseño del footer*/
+.footer {
+    text-align: center;
+}

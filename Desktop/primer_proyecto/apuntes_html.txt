@@ -1,0 +1,55 @@
+### HTML ###
+- Lenguaje para la estructura de sitios web
+- Head --> Da informacion para que muestre correctamente el sitio web
+- Body --> Lo que se ve en el sitio web
+-<!DOCTYPE html> <!--Version de html que utilizamos--> 
+- No importan los espacios en HTML
+- h1 hasta  h6 le dice al navegador cual es el contenido mas importante -- > heading
+- tambien cambian del mas grande al mas pequeño
+- h1 se utiliza una vez por archivo html
+
+### ESTRUCTURAR EL CONTENIDO EN HTML ###
+Separa las diferentes secciones de una pagina en especifico y los agrupa respectivamente
+Etiquetas para agrupar:
+- <header> --> para la parte superior
+- <footer> --> para la parte inferior
+- <nav> --> para menu de navegacion
+- <main> --> contiene el contenido principal de la pagina
+- <section> --> para utilizar una seccion (se puede utilizar multiples veces)
+- <article> --> para entrada de blog o noticia
+- <aside> --> barra lateral
+- <div> --> se usa cuando no se puede utilizar ninguno de los anteriores
+SI EL PRIMER ELEMENTO HIJO DE LA ETIQUETA QUE SE USA PARA AGRUPAR ES UN HEADING SE DEBE AGRUPAR A EXCEPCION DE QUE SEA EL CONTENIDO PRINCIPAL
+
+### ENLACES ###
+Se usa <a> para poner enlaces, sin embargo estas deben tener un atributo que se debe poner en la etiqueta de apertura, el atributo se llama 'href' y ahi es donde se pone el enlace
+Los atributos siempre estan dentro de la etiqueta de apertura
+Se coloca el simbolo de # en href cuando aun no se sabe que enlace se va a utilizar
+No se recomienda poner letra en mayuscula en html ya que despues se puede hacer con css
+Cuando solo es un enlace no es necesario ponerlo en una barra de navegacion
+
+
+### IMAGENES ###
+TABLER ICONS --> Genera iconos
+Se usa la etiqueta <img> sin embargo esta solo tiene apertura
+Se usa el atributo src y ahi se pone la ruta donde esta la imagen
+Se recomienda poner las imagenes en una carpeta aparte
+svg --> No se distorsiona, todos los navegadores lo soportan
+
+### FORMULARIOS ###
+Se usa la etiqueta <form>
+fieldset --> varios formulario de un mismo tipo
+legend --> se usa para dar indicaciones a los usuarios en un formulario
+label --> Se usa para poner la pregunta de cada formulario
+input --> Datos donde el usuario ingresa la respuesta
+este tiene diferentes tipos:
+email --> pone el arroba en telefonos celulares
+tel --> aparecen solo numeros en telefonos
+radio --> aparece para seleccionar una opcion
+checbox --> sirve para seleccionar varias opciones
+number --> solo deja ingresar numeros
+submit --> Sirve para finalizar una accion
+placeholder --> texto que se muestra cuando el input esta vacio
+TEXTAREA --> Sirve para que el usuario inserte un mensaje largo
+
+
